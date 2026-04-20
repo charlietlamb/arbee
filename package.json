@@ -1,21 +1,29 @@
 {
-  "name": "arbee",
-  "module": "index.ts",
-  "type": "module",
-  "private": true,
   "dependencies": {
     "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.4.12",
+    "@types/bun": "latest",
+    "husky": "^9.1.7",
+    "ultracite": "7.6.0"
+  },
+  "name": "arbee",
+  "peerDependencies": {
+    "typescript": "^5"
   },
   "scripts": {
     "dev": "bun run --watch index.ts",
     "start": "bun run index.ts",
     "test": "bun test",
-    "check": "bunx tsc --noEmit"
+    "lint": "ultracite check",
+    "format": "ultracite fix",
+    "check": "ultracite check",
+    "fix": "ultracite fix",
+    "typecheck": "bunx tsc --noEmit",
+    "prepare": "husky"
   },
-  "devDependencies": {
-    "@types/bun": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5"
-  }
+  "type": "module",
+  "module": "index.ts",
+  "private": true
 }

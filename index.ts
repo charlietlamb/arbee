@@ -1,5 +1,1 @@
-import { createApp } from "./src/app.ts";
-
-const app = createApp();
-
-await app.start();
+export * from "./src/odds-api/index.ts";
