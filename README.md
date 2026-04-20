@@ -6,10 +6,16 @@ To install dependencies:
 bun install
 ```
 
-To run:
+Set local env:
 
 ```bash
-bun run index.ts
+cp .env.example .env
 ```
 
-This project was created using `bun init` in bun v1.3.5. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+Then run the live ingest CLI:
+
+```bash
+bun run start
+```
+
+The current slice polls The Odds API, validates provider payloads with Zod, normalizes them into a typed ingest stream, and stores latest state plus bounded history in memory for testing.
